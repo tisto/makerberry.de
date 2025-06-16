@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <title>Preisanzeige E-Paper Display - Makerberry</title>
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-success text-white text-center py-4">
+      <img src="makerberry-logo.jpg" width="100px" />
+      <h1>Makerberry</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#projects">Projekte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#raspberry">Raspberry Pi Info</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.html#projects">Projekte</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Preisanzeige E-Paper Display</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="mb-4">Preisanzeige E-Paper Display</h1>
+          
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Projektübersicht</h5>
+              <p class="card-text">
+                Ein E-Paper Display zur Anzeige von Preisen mit einem Raspberry Pi Zero WH und einem Waveshare E-Paper Display.
+                Dieses Projekt zeigt, wie man dynamische Preisinformationen auf einem energieeffizienten E-Paper Display darstellt.
+              </p>
+            </div>
+          </div>
+
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Schwierigkeitsgrad</h6>
+                  <div class="progress mb-2">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 50%"></div>
+                  </div>
+                  <p class="card-text">Mittel</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Geschätzte Zeit</h6>
+                  <p class="card-text"><strong>1-2 Stunden</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Benötigte Komponenten</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="https://www.berrybase.de/raspberry-pi-zero-wh" target="_blank" rel="noopener" class="text-decoration-none">Raspberry Pi Zero WH</a>
+                  <span class="badge bg-primary rounded-pill">1x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="https://www.berrybase.de/waveshare-2-13-e-paper-display-fuer-raspberry-pi-zero-5-punkt-touch-250-122-pixel-abs-gehaeuse" target="_blank" rel="noopener" class="text-decoration-none">Waveshare 2,13" E-Paper Display für Raspberry Pi Zero: 5 Punkt Touch, 250×122 Pixel, ABS-Gehäuse</a>
+                  <span class="badge bg-primary rounded-pill">1x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="https://www.berrybase.de/sandisk-extreme-micro-sdhc-a1-uhs-i-u3-speicherkarte-adapter-32gb" target="_blank" rel="noopener" class="text-decoration-none">SanDisk Extreme microSDHC A1 UHS-I U3 Speicherkarte + Adapter (32GB)</a>
+                  <span class="badge bg-primary rounded-pill">1x</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <a href="https://www.berrybase.de/offizielles-raspberry-pi-micro-usb-netzteil-5-1v-2-5a-eu-weiss" target="_blank" rel="noopener" class="text-decoration-none">Offizielles Raspberry Pi Micro USB Netzteil 5,1V / 2,5A EU (weiß)</a>
+                  <span class="badge bg-primary rounded-pill">1x</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Funktionen</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li><i class="text-success">✓</i> Automatische Preisaktualisierung</li>
+                    <li><i class="text-success">✓</i> Energieeffizientes E-Paper Display</li>
+                    <li><i class="text-success">✓</i> WLAN-Konnektivität</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li><i class="text-success">✓</i> Anpassbare Layouts</li>
+                    <li><i class="text-success">✓</i> API-Integration</li>
+                    <li><i class="text-success">✓</i> Batteriebetrieb möglich</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Anwendungsbereiche</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <div class="text-center">
+                    <div class="bg-light rounded p-3 mb-2">
+                      <i class="h2 text-primary">🏪</i>
+                    </div>
+                    <h6>Einzelhandel</h6>
+                    <p class="small text-muted">Dynamische Preisanzeige im Geschäft</p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="text-center">
+                    <div class="bg-light rounded p-3 mb-2">
+                      <i class="h2 text-success">📈</i>
+                    </div>
+                    <h6>Kryptowährungen</h6>
+                    <p class="small text-muted">Live-Kurse von Bitcoin & Co.</p>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <div class="text-center">
+                    <div class="bg-light rounded p-3 mb-2">
+                      <i class="h2 text-warning">⛽</i>
+                    </div>
+                    <h6>Tankstellen</h6>
+                    <p class="small text-muted">Aktuelle Spritpreise anzeigen</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h6 class="mb-0">Projekt-Status</h6>
+            </div>
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <span class="badge bg-success me-2">Aktiv</span>
+                <small class="text-muted">Verfügbar</small>
+              </div>
+              <p class="card-text small">
+                Dieses Projekt ist vollständig dokumentiert und getestet.
+              </p>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h6 class="mb-0">Downloads</h6>
+            </div>
+            <div class="card-body">
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">
+                  <i class="me-1">📥</i> Python Code
+                </button>
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="me-1">📋</i> Schaltplan
+                </button>
+                <button class="btn btn-outline-secondary" type="button">
+                  <i class="me-1">📖</i> Vollständige Anleitung
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h6 class="mb-0">Verwandte Projekte</h6>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                  <a href="#" class="text-decoration-none">Instagram Follower Counter</a>
+                </li>
+                <li class="mb-2">
+                  <a href="index.html#projects" class="text-decoration-none">Alle Projekte anzeigen</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Makerberry</h5>
+            <p class="mb-0">Die Maker Ideenplattform für Raspberry Pi Fans.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0">© 2024 Makerberry. Alle Rechte vorbehalten.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
