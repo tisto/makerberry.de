@@ -181,6 +181,91 @@
               </div>
             </div>
           </div>
+
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Schritt-für-Schritt Anleitung</h5>
+            </div>
+            <div class="card-body">
+              <p class="mb-3">
+                Vollständige Dokumentation: 
+                <a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual#Working_With_Raspberry_Pi" target="_blank" rel="noopener">Waveshare Wiki</a>
+              </p>
+
+              <h6 class="fw-bold">1. SPI Interface aktivieren</h6>
+              <pre class="bg-light p-2 rounded mb-3"><code>sudo raspi-config
+
+3 Choose Interfacing Options -> SPI -> Yes Enable SPI interface
+
+sudo reboot</code></pre>
+
+              <h6 class="fw-bold">2. Config.txt bearbeiten</h6>
+              <pre class="bg-light p-2 rounded mb-3"><code>sudo vi /boot/firmware/config.txt
+
+# Uncomment some or all of these to enable the optional hardware interfaces
+dtparam=i2c_arm=on
+#dtparam=i2s=on
+dtparam=spi=on</code></pre>
+
+              <h6 class="fw-bold">3. Python Abhängigkeiten installieren</h6>
+              <pre class="bg-light p-2 rounded mb-3"><code>sudo apt-get update
+sudo apt-get install python3-pip (already installed)
+sudo apt-get install python3-pil (already installed)
+sudo apt-get install python3-numpy (already installed)
+sudo pip3 install spidev</code></pre>
+
+              <h6 class="fw-bold">4. Demo ausführen</h6>
+              <pre class="bg-light p-2 rounded mb-3"><code>ssh pi@zero.local
+cd /e-Paper/RaspberryPi_JetsonNano/python/examples
+python epd_2in13_V4_test.py</code></pre>
+
+              <h6 class="fw-bold">5. Einfaches Rechteck anzeigen</h6>
+              <pre class="bg-light p-2 rounded mb-3"><code>pi@zero:~/e-Paper/RaspberryPi_JetsonNano/python/lib $ python
+Python 3.11.2 (main, Nov 30 2024, 21:22:50) [GCC 12.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from waveshare_epd import epd2in13_V4
+>>> from PIL import Image,ImageDraw,ImageFont
+>>> epd = epd2in13_V4.EPD()
+>>> epd.init()
+0
+>>> epd.Clear(0xFF)
+>>> image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+>>> draw = ImageDraw.Draw(image)
+>>> draw.rectangle([(0,0),(50,50)],outline = 0)
+>>> epd.display(epd.getbuffer(image))</code></pre>
+
+              <h6 class="fw-bold">6. Einfache Preisanzeige</h6>
+              <pre class="bg-light p-2 rounded mb-3"><code>import os
+import sys
+import time
+from PIL import Image,ImageDraw,ImageFont
+
+picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
+libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
+if os.path.exists(libdir):
+    sys.path.append(libdir)
+
+from waveshare_epd import epd2in13_V4
+
+epd = epd2in13_V4.EPD()
+
+epd.init()
+epd.Clear(0xFF)
+
+font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
+font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+font50 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 50)
+
+epd.init()
+
+image = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+draw = ImageDraw.Draw(image)
+
+draw.text((10, 30), '2,50 EURO', font = font50, fill = 0)
+epd.display(epd.getbuffer(image))
+time.sleep(2)</code></pre>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-4">
